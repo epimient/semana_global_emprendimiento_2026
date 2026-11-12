@@ -36,7 +36,7 @@ de 2026**; las fechas límite de la sección 11 están calculadas sobre esa fech
 | 6 | URL canónica sin verificar | 🟠 | Si la ruta no existe, los buscadores indexan una dirección rota |
 | 7 | Sin ningún canal de contacto | 🟠 | Quien tiene una duda no tiene a quién escribir |
 | 8 | Contenido marcado "por confirmar" | 🟡 | Cuatro marcas visibles de borrador |
-| 9 | Retratos de conferencistas | 🟡 | Decisión de diseño pendiente |
+| 9 | Retratos y perfiles de conferencistas | ✅ | Fotos y perfiles recibidos e integrados (Mercado, Betancourt, Peña, Vargas) |
 
 ---
 
@@ -284,7 +284,7 @@ Si el tiempo no alcanza para todo, este es el orden recomendado:
 **Tercero (si queda aire)**
 
 8. Cerrar los cuatro "por confirmar".
-9. Retratos de conferencistas.
+9. Retratos de conferencistas (✅ Resuelto para Mercado, Betancourt, Peña y Vargas).
 
 ---
 
