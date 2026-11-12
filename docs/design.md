@@ -7,6 +7,8 @@ está implementado en `css/styles.css`; los nombres de clase son los reales del 
 - **Estilos:** `css/styles.css` (se carga después de Bootstrap para sobrescribirlo)
 - **Comportamiento:** `js/main.js`
 - **Contenido fuente:** [`docs/contenido.md`](./contenido.md)
+- **Vista de la prueba D2:** [escritorio](./previews/conferencistas-d2-escritorio.png)
+  y [móvil](./previews/conferencistas-d2-movil.png)
 
 ---
 
@@ -34,8 +36,9 @@ se consulta va en mono; lo que se explica va en Instrument Sans.**
 
 ## 2. Principios
 
-1. **La tipografía es la imagen.** No hay fotos de relleno ni ilustraciones genéricas.
-   El peso visual lo cargan las letras, el color y las texturas.
+1. **La tipografía dirige la imagen.** No hay fotos de relleno ni ilustraciones
+   genéricas. Los retratos identifican a los conferencistas; las letras, el color
+   y las texturas sostienen el peso visual del resto de la página.
 2. **Color de fiesta, uso disciplinado.** Un color de fondo por sección y un solo
    acento dentro de ella. Nunca dos acentos compitiendo.
 3. **Borde duro, no sombra difusa.** Los desplazamientos son de 3–4 px y las sombras
@@ -185,7 +188,7 @@ con padding lateral propio:
 | `< 576px` | Hero a una columna, estadísticas 2×2, menú hamburguesa |
 | `≥ 576px` | Estadísticas del hero en 4 columnas |
 | `≥ 768px` | Grids de 2 columnas (tarjetas, instituciones, conferencistas) |
-| `≥ 992px` | Layout editorial de dos columnas con encabezado fijo (`.sticky-head`) |
+| `≥ 992px` | Layout editorial de dos columnas con encabezado fijo (`.sticky-head`); conferencistas en 3 columnas |
 | `≥ 1200px` | Navegación horizontal visible, logo del evento a 50 px, footer 4 columnas |
 
 La navegación de escritorio aparece en `1200px`, no en `992px`: por debajo, seis
@@ -331,21 +334,38 @@ La pestaña activa invierte colores (fondo marigold, texto tinta). Los enlaces
 `bootstrap.Tab.getOrCreateInstance(...).show()`.
 
 Cada jornada lista sesiones `.session` con `.session-time` (mono), `.session-kind`,
-`.session-title` y `.session-desc`. `.session-kind--talk` distingue conferencias.
+`.session-title` y `.session-meta`. `.session-kind--talk` distingue conferencias.
+La agenda recibida contiene nueve bloques: cuatro el miércoles, tres el jueves
+y dos el viernes. Los horarios vacíos no generan tarjetas. Los temas de Renato
+da Costa y Luis Betancourt ya están confirmados y aparecen también en sus
+tarjetas de conferencista.
 
 ### 6.11 Conferencistas — `.speaker`
 
-Retratos tipográficos: no hay fotos. `.speaker-portrait` contiene las iniciales en
-display gigante sobre un color plano; `.speaker-initials` es el texto. Variantes:
+Cuatro tarjetas usan fotos reales: Gregorio Mercado, Luis Betancourt, Ricardo Peña
+y José Vargas. La versión D2 las trata como rotograbado en tinta `#141433`
+y papel `#f6f1e6`: `#speaker-duotone` primero elimina la saturación y luego
+asigna los tonos mediante `feComponentTransfer`. El filtro se define en un SVG
+oculto al comienzo del `body` y se aplica con CSS; los originales permanecen
+intactos. No se necesita una imagen procesada adicional por foto.
 
-- `.speaker--outline` → iniciales en outline para el invitado sin confirmar
-- `.speaker-slot` → tarjeta de "espacio disponible"
-- `.speaker-country` → país en mono
+`.speaker-portrait` usa proporción 4:5 en todos los tamaños. Las fotos llenan
+el recorte con `object-fit: cover`; `--photo-position` ajusta la posición de
+Ricardo y José. La barra superior de 6 px y el chip del país toman el
+`--accent` de cada tarjeta: turquesa, coral, tinta y verde profundo. Ricardo
+usa WebP para reducir la descarga. Las cuatro imágenes llevan `loading="lazy"`
+y dimensiones intrínsecas.
 
-Debajo: `.speaker-name`, `.speaker-org`, `.speaker-talk`. El bloque
-`.speaker-experiences` (fondo verde profundo) agrupa las experiencias universitarias.
-Cada tarjeta recibe `--accent` (color del retrato) y `--fg` (color de las iniciales)
-en línea, de modo que el retrato se resuelve sin imágenes ni selectores extra.
+Renato da Costa conserva una tarjeta tipográfica amarilla, con iniciales grandes
+y la misma proporción 4:5, hasta recibir su foto. `.speaker-country` muestra el
+país junto a la bandera y `.speaker--outline` mantiene la variante de fondo
+claro de José. Las fotos tienen `alt=""` porque el nombre aparece como
+encabezado de la misma tarjeta. No hay fotos de conferencistas en el hero ni
+en otras secciones.
+
+Debajo: `.speaker-name`, `.speaker-org`, `.speaker-bio` y `.speaker-talk`.
+`.speaker-slot` enlaza con la jornada correspondiente de la agenda. El bloque
+`.speaker-experiences` (fondo tinta) agrupa las experiencias universitarias.
 
 ### 6.12 A quién está dirigido — `.audience`
 
@@ -359,7 +379,7 @@ Dos tarjetas: presencial y virtual.
 - `.place-band` → fila de datos (fechas y horario) separada por un filete discontinuo
 - `.place-name` / `.place-address` / `.place-coords`
 - `.place-facts` → lista de datos en mono
-- `.place-note` → aviso de enlace pendiente (`.tag-pending`)
+- `.place-note` → aviso de enlace de Teams pendiente
 
 `.place-card--virtual` invierte el esquema de color.
 
@@ -447,8 +467,9 @@ JavaScript está desactivado.
   decorativo (marca de agua, textura, flechas).
 - **Formulario:** `label` asociado a cada campo, `required`, `novalidate` para controlar
   el mensaje, errores vinculados con `aria-describedby` y foco al primer campo inválido.
-- **Imágenes:** todas con `alt`; las decorativas con `alt=""`. Los logos llevan
-  dimensiones explícitas para evitar saltos de layout.
+- **Imágenes:** todas con `alt`; los retratos de las tarjetas y las banderas usan
+  `alt=""` porque su nombre o país está escrito en el mismo bloque. Los logos y
+  las fotos llevan dimensiones explícitas; el marco 4:5 reserva el espacio visual.
 - **Zoom:** el layout no fija anchos en píxeles para bloques de texto y usa `clamp()`
   en los titulares, de modo que ampliar el texto no genera scroll horizontal.
 
@@ -506,6 +527,29 @@ instituciones y tarjetas de conferencistas (`.flag--sm`, 16 × 11).
 
 Las versiones optimizadas pesan 6.6 KB en total. Los PNG originales entregados por
 la organización quedan intactos en `assets/`.
+
+---
+
+### 10.2 Retratos de conferencistas
+
+| Tarjeta | Archivo servido | Origen | Estado |
+| --- | --- | --- | --- |
+| Gregorio Mercado | `gregorio-mercado.jpg` (63,5 KB; 630 × 630) | Foto recibida, fondo blanco | D2 |
+| Renato da Costa | — | Foto pendiente | Iniciales `RC` |
+| Luis Betancourt | `luis-betancourt.jpeg` (74,2 KB; 1086 × 1448) | Foto recibida, fondo blanco | D2 |
+| Ricardo Peña | `ricardo-pena.webp` (133,9 KB; 1024 × 1024) | JPEG recibido de 445,8 KB | D2 |
+| José Vargas | `jose-vargas.jpeg` (120,9 KB; 960 × 1280) | Foto recibida, fondo de oficina | D2 |
+
+Los archivos están en `assets/conferencistas/`. Las cuatro fotos servidas suman
+aproximadamente 392 KB; el filtro no añade archivos descargables. Conservar los
+originales para poder rehacer los encuadres. Si llega la foto de Renato, agregarla
+con `.speaker-portrait--photo`, `loading="lazy"`, dimensiones reales y
+`alt=""`; verificar el recorte en móvil y escritorio. La prueba actual está
+documentada en las [capturas](./previews/).
+
+Antes de publicar los retratos, confirmar con la organización el permiso de
+difusión y la versión final de nombres, cargos y temas. Ver
+[`pendientes.md`](./pendientes.md).
 
 ---
 

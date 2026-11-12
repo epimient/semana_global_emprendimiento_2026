@@ -185,23 +185,19 @@ Explora la programación académica de la Semana Global de Emprendimiento 2026 y
 
 ### MIÉRCOLES 18 DE NOVIEMBRE
 
-**Jornada de apertura e intercambio de experiencias**
+**Instalación, experiencias y sostenibilidad**
 
 **18:00 – 18:30 | Instalación del evento**
 
-Apertura oficial de la Semana Global de Emprendimiento 2026.
+Instalación del evento.
 
-**18:30 – 19:00 | Experiencias de la Universidad Tecnológica de Xicotepec de Juárez**
-
-País: México.
-
-Espacio de intercambio de experiencias universitarias relacionadas con emprendimiento e innovación.
-
-**19:00 – 19:30 | Experiencias de la Universidad Autónoma de Baja California**
+**18:30 – 19:00 | Experiencias en emprendimiento de la Universidad Tecnológica de Xicotepec de Juárez**
 
 País: México.
 
-Presentación de experiencias desarrolladas desde el entorno académico universitario.
+**19:00 – 19:30 | Experiencias en emprendimiento de la Universidad Autónoma de Baja California**
+
+País: México.
 
 **20:00 – 20:30 | Conferencia: Sostenibilidad empresarial y negocios verdes**
 
@@ -211,13 +207,11 @@ Institución: Centro de Innovación y Emprendimiento, Corporación Universitaria
 
 País: Colombia.
 
-Una conferencia dedicada a la sostenibilidad empresarial y las oportunidades que ofrece el desarrollo de negocios orientados a generar valor con responsabilidad ambiental.
-
 ### JUEVES 19 DE NOVIEMBRE
 
-**Jornada de innovación y transformación empresarial**
+**Emprendimiento sostenible, estrategia y tecnología 4.0**
 
-**18:00 – 18:30 | Conferencia internacional — Brasil**
+**18:00 – 18:30 | Conferencia Brasil: Emprendimiento sostenible**
 
 Conferencista: Dr. Renato da Costa.
 
@@ -225,37 +219,29 @@ Institución: UniEnsino.
 
 País: Brasil.
 
-*Nombre de la conferencia por confirmar.*
-
-**19:00 – 19:30 | Participación especial: Luis Betancourt Somoza**
+**19:00 – 19:30 | Conferencia empresarial: Emprende con estrategia**
 
 Participante: Luis Betancourt Somoza.
 
-Perfil informado: Estratega, agencia de marketing estratégico.
-
-*Tema específico de la intervención por confirmar.*
+Perfil informado: CEO de Estratega S.A.S., agencia de marketing estratégico.
 
 **20:00 – 20:30 | Conferencia: Adopción de tecnologías 4.0 en sistemas territoriales de innovación**
 
 Conferencista: Dr. Ricardo Peña.
 
-Institución: Red Nacional de Emprendimiento.
+Entidad informada: Red Nacional de Emprendimiento.
 
 País: Colombia.
 
-Espacio dedicado a la incorporación de tecnologías 4.0 en los sistemas territoriales de innovación y su relación con los procesos de transformación empresarial.
-
 ### VIERNES 20 DE NOVIEMBRE
 
-**Jornada de emprendimiento en la era digital**
+**Experiencias universitarias y era digital**
 
-**18:00 – 18:30 | Experiencias de UPAEP**
+**18:00 – 18:30 | Experiencias en emprendimiento de la Universidad Popular Autónoma del Estado de Puebla (UPAEP)**
 
 Institución: Universidad Popular Autónoma del Estado de Puebla.
 
 País: México.
-
-Presentación de experiencias universitarias relacionadas con el emprendimiento, la innovación y el desarrollo de iniciativas académicas.
 
 **20:00 – 20:30 | Conferencia: El arte de emprender en la era digital**
 
@@ -265,9 +251,11 @@ Institución: Instituto Universitario de Ciencias Empresariales (IUCE).
 
 País: Argentina.
 
-Una conferencia sobre el emprendimiento en el contexto de la era digital y las perspectivas que surgen de la transformación de los modelos empresariales.
-
-**Nota de programación:** Los espacios no asignados en la agenda actualizada no se presentan como actividades confirmadas. La programación está sujeta a actualizaciones por parte de la organización.
+**Nota de programación:** La tabla recibida deja sin actividad asignada el bloque
+19:30–20:00 de las tres jornadas, además de 18:30–19:00 y 19:00–19:30 del
+viernes y 18:30–19:00 del jueves. Esos espacios no se presentan como
+actividades confirmadas. La página muestra los horarios como hora de Colombia
+(COT, UTC−5), pendiente de confirmación explícita de la organización.
 
 ---
 
@@ -275,13 +263,21 @@ Una conferencia sobre el emprendimiento en el contexto de la era digital y las p
 
 ### Voces que inspiran nuevas perspectivas
 
-Conoce a los especialistas y representantes académicos anunciados para esta edición.
+Especialistas y representantes académicos anunciados para esta edición.
+
+**Presentación actual:** cuatro retratos de conferencistas en tinta y papel
+(Mercado, Betancourt, Peña y Vargas). Renato da Costa aparece con iniciales
+hasta disponer de su foto. El tratamiento visual y los archivos se documentan
+en [`design.md`](./design.md#611-conferencistas--speaker).
 
 ### MSc. Gregorio Mercado
 
 **Colombia**
 
-Centro de Innovación y Emprendimiento — Corporación Universitaria Americana.
+**Cargo visible:** Líder Ecosistema CIE Americana · GEN Colombia / LATAM.
+
+Magíster en desarrollo sostenible con experiencia en gestión de proyectos en
+CTeI. Investigador en TI e innovación y líder de ecosistemas de emprendimiento.
 
 **Conferencia:** Sostenibilidad empresarial y negocios verdes.
 
@@ -289,25 +285,34 @@ Centro de Innovación y Emprendimiento — Corporación Universitaria Americana.
 
 **Brasil**
 
-UniEnsino.
+**Institución visible:** UniEnsino Brasil.
 
-**Participación:** Conferencia internacional.
+Docente e investigador internacional especializado en gestión de la innovación,
+desarrollo regional y vinculación empresarial en América Latina.
 
-*Título de conferencia pendiente de confirmación.*
+**Conferencia:** Emprendimiento sostenible.
 
 ### Luis Betancourt Somoza
 
-**Participación especial**
+**Colombia · Conferencia empresarial**
 
-Estratega, agencia de marketing estratégico.
+**Cargo visible:** CEO de Estratega S.A.S. · Agencia de marketing estratégico.
 
-*Tema y descripción de la intervención pendientes de confirmación.*
+Especialista en Marketing con más de 10 años de experiencia en dirección
+comercial, publicidad digital, inteligencia artificial y automatización de
+procesos.
 
-### Dr. Ricardo Peña
+**Conferencia:** Emprende con estrategia.
+
+### Dr. Ricardo Peña Ruiz
 
 **Colombia**
 
-Red Nacional de Emprendimiento.
+**Entidad visible:** Red Nacional de Emprendimiento.
+
+Doctor en Innovación e Ingeniero Industrial. Especialista en formulación de
+proyectos CTeI, adopción de tecnologías 4.0 en sistemas territoriales y
+docente investigador.
 
 **Conferencia:** Adopción de tecnologías 4.0 en sistemas territoriales de innovación.
 
@@ -315,7 +320,12 @@ Red Nacional de Emprendimiento.
 
 **Argentina**
 
-Instituto Universitario de Ciencias Empresariales (IUCE).
+**Cargos visibles:** Universidad IUCE · Analista CNN en Español · Director
+EVALUECON.
+
+Economista especializado en economía internacional, analista económico en
+CNN en Español, docente universitario, consultor público-privado y coordinador
+de Economía en IUCE.
 
 **Conferencia:** El arte de emprender en la era digital.
 
@@ -383,7 +393,8 @@ Las actividades tendrán acceso remoto mediante Microsoft Teams.
 
 **Fecha:** 18, 19 y 20 de noviembre de 2026.
 
-**Horario:** De acuerdo con la programación académica publicada. Zona horaria pendiente de confirmación oficial.
+**Horario mostrado en la página:** 18:00–20:30, hora de Colombia (COT,
+UTC−5). La organización aún debe confirmar que la tabla recibida usa esa zona.
 
 **Botones sugeridos:**
 

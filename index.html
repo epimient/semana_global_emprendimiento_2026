@@ -70,6 +70,17 @@
 </head>
 <body>
 
+  <svg class="svg-filter-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <filter id="speaker-duotone" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.8863" intercept="0.0784"/>
+        <feFuncG type="linear" slope="0.8667" intercept="0.0784"/>
+        <feFuncB type="linear" slope="0.7020" intercept="0.2000"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="site-head" id="siteHead">
@@ -170,7 +181,7 @@
                 <span class="day-ticket-num">18</span>
                 <span class="day-ticket-body">
                   <span class="day-ticket-dow">Miércoles</span>
-                  <span class="day-ticket-note">Apertura e intercambio</span>
+                  <span class="day-ticket-note">Apertura y sostenibilidad</span>
                 </span>
                 <span class="day-ticket-time mono">18:00<br>20:30</span>
               </a>
@@ -178,7 +189,7 @@
                 <span class="day-ticket-num">19</span>
                 <span class="day-ticket-body">
                   <span class="day-ticket-dow">Jueves</span>
-                  <span class="day-ticket-note">Innovación y transformación</span>
+                  <span class="day-ticket-note">Estrategia y tecnología 4.0</span>
                 </span>
                 <span class="day-ticket-time mono">18:00<br>20:30</span>
               </a>
@@ -186,7 +197,7 @@
                 <span class="day-ticket-num">20</span>
                 <span class="day-ticket-body">
                   <span class="day-ticket-dow">Viernes</span>
-                  <span class="day-ticket-note">Emprender en la era digital</span>
+                  <span class="day-ticket-note">Experiencias y era digital</span>
                 </span>
                 <span class="day-ticket-time mono">18:00<br>20:30</span>
               </a>
@@ -482,28 +493,28 @@
           <div class="agenda-tabs" role="tablist" aria-label="Días de la agenda">
             <button class="agenda-tab active" id="tab-18" data-bs-toggle="tab" data-bs-target="#dia-18" type="button" role="tab" aria-controls="dia-18" aria-selected="true">
               <span class="agenda-tab-num">18</span>
-              <span class="agenda-tab-body"><span class="agenda-tab-dow">Miércoles</span><span class="agenda-tab-note">Apertura e intercambio</span></span>
+              <span class="agenda-tab-body"><span class="agenda-tab-dow">Miércoles</span><span class="agenda-tab-note">Apertura y sostenibilidad</span></span>
             </button>
             <button class="agenda-tab" id="tab-19" data-bs-toggle="tab" data-bs-target="#dia-19" type="button" role="tab" aria-controls="dia-19" aria-selected="false" tabindex="-1">
               <span class="agenda-tab-num">19</span>
-              <span class="agenda-tab-body"><span class="agenda-tab-dow">Jueves</span><span class="agenda-tab-note">Innovación y transformación</span></span>
+              <span class="agenda-tab-body"><span class="agenda-tab-dow">Jueves</span><span class="agenda-tab-note">Estrategia y tecnología 4.0</span></span>
             </button>
             <button class="agenda-tab" id="tab-20" data-bs-toggle="tab" data-bs-target="#dia-20" type="button" role="tab" aria-controls="dia-20" aria-selected="false" tabindex="-1">
               <span class="agenda-tab-num">20</span>
-              <span class="agenda-tab-body"><span class="agenda-tab-dow">Viernes</span><span class="agenda-tab-note">Emprender en la era digital</span></span>
+              <span class="agenda-tab-body"><span class="agenda-tab-dow">Viernes</span><span class="agenda-tab-note">Experiencias y era digital</span></span>
             </button>
           </div>
         </div>
 
         <div class="tab-content agenda-panels" data-reveal style="--d:80ms">
           <div class="tab-pane fade show active" id="dia-18" role="tabpanel" aria-labelledby="tab-18" tabindex="0">
-            <p class="agenda-day-title">Miércoles 18 de noviembre <span class="mono">Jornada de apertura e intercambio de experiencias</span></p>
+            <p class="agenda-day-title">Miércoles 18 de noviembre <span class="mono">Instalación, experiencias y sostenibilidad</span></p>
 
             <article class="session">
               <div class="session-time"><span class="mono">18:00</span><span class="mono session-time-sep">–</span><span class="mono">18:30</span></div>
               <div class="session-body">
                 <p class="session-kind">Instalación</p>
-                <h3 class="session-title">Apertura oficial de la Semana Global de Emprendimiento 2026</h3>
+                <h3 class="session-title">Instalación del evento</h3>
                 <p class="session-meta mono">Corporación Universitaria Americana · Colombia</p>
               </div>
             </article>
@@ -512,8 +523,7 @@
               <div class="session-time"><span class="mono">18:30</span><span class="mono session-time-sep">–</span><span class="mono">19:00</span></div>
               <div class="session-body">
                 <p class="session-kind">Experiencias</p>
-                <h3 class="session-title">Experiencias de la Universidad Tecnológica de Xicotepec de Juárez</h3>
-                <p class="session-desc">Espacio de intercambio de experiencias universitarias relacionadas con emprendimiento e innovación.</p>
+                <h3 class="session-title">Experiencias en emprendimiento de la Universidad Tecnológica de Xicotepec de Juárez</h3>
                 <p class="session-meta mono">UTXJ · México</p>
               </div>
             </article>
@@ -522,8 +532,7 @@
               <div class="session-time"><span class="mono">19:00</span><span class="mono session-time-sep">–</span><span class="mono">19:30</span></div>
               <div class="session-body">
                 <p class="session-kind">Experiencias</p>
-                <h3 class="session-title">Experiencias de la Universidad Autónoma de Baja California</h3>
-                <p class="session-desc">Presentación de experiencias desarrolladas desde el entorno académico universitario.</p>
+                <h3 class="session-title">Experiencias en emprendimiento de la Universidad Autónoma de Baja California</h3>
                 <p class="session-meta mono">UABC · México</p>
               </div>
             </article>
@@ -533,20 +542,19 @@
               <div class="session-body">
                 <p class="session-kind session-kind--talk">Conferencia</p>
                 <h3 class="session-title">Sostenibilidad empresarial y negocios verdes</h3>
-                <p class="session-desc">Una conferencia dedicada a la sostenibilidad empresarial y las oportunidades de generar valor con responsabilidad ambiental.</p>
                 <p class="session-meta mono">MSc. Gregorio Mercado · CIE, Corporación Universitaria Americana · Colombia</p>
               </div>
             </article>
           </div>
 
           <div class="tab-pane fade" id="dia-19" role="tabpanel" aria-labelledby="tab-19" tabindex="0">
-            <p class="agenda-day-title">Jueves 19 de noviembre <span class="mono">Jornada de innovación y transformación empresarial</span></p>
+            <p class="agenda-day-title">Jueves 19 de noviembre <span class="mono">Emprendimiento sostenible, estrategia y tecnología 4.0</span></p>
 
             <article class="session">
               <div class="session-time"><span class="mono">18:00</span><span class="mono session-time-sep">–</span><span class="mono">18:30</span></div>
               <div class="session-body">
                 <p class="session-kind session-kind--talk">Conferencia internacional</p>
-                <h3 class="session-title">Conferencia desde Brasil <span class="tag-pending">Título por confirmar</span></h3>
+                <h3 class="session-title">Emprendimiento sostenible</h3>
                 <p class="session-meta mono">Dr. Renato da Costa · UniEnsino · Brasil</p>
               </div>
             </article>
@@ -554,10 +562,9 @@
             <article class="session">
               <div class="session-time"><span class="mono">19:00</span><span class="mono session-time-sep">–</span><span class="mono">19:30</span></div>
               <div class="session-body">
-                <p class="session-kind">Participación especial</p>
-                <h3 class="session-title">Luis Betancourt Somoza <span class="tag-pending">Tema por confirmar</span></h3>
-                <p class="session-desc">CEO de Estratega S.A.S. Especialista en marketing estratégico, publicidad digital y automatización de procesos.</p>
-                <p class="session-meta mono">Luis Betancourt Somoza · Estratega S.A.S. · Colombia</p>
+                <p class="session-kind session-kind--talk">Conferencia empresarial</p>
+                <h3 class="session-title">Emprende con estrategia</h3>
+                <p class="session-meta mono">Luis Betancourt Somoza · CEO Estratega S.A.S., agencia de marketing estratégico · Colombia</p>
               </div>
             </article>
 
@@ -566,21 +573,19 @@
               <div class="session-body">
                 <p class="session-kind session-kind--talk">Conferencia</p>
                 <h3 class="session-title">Adopción de tecnologías 4.0 en sistemas territoriales de innovación</h3>
-                <p class="session-desc">La incorporación de tecnologías 4.0 en los sistemas territoriales de innovación y su relación con la transformación empresarial.</p>
-                <p class="session-meta mono">Dr. Ricardo Peña Ruiz · National Ambassador GEN Colombia · Cintel</p>
+                <p class="session-meta mono">Dr. Ricardo Peña Ruiz · Red Nacional de Emprendimiento · Colombia</p>
               </div>
             </article>
           </div>
 
           <div class="tab-pane fade" id="dia-20" role="tabpanel" aria-labelledby="tab-20" tabindex="0">
-            <p class="agenda-day-title">Viernes 20 de noviembre <span class="mono">Jornada de emprendimiento en la era digital</span></p>
+            <p class="agenda-day-title">Viernes 20 de noviembre <span class="mono">Experiencias universitarias y era digital</span></p>
 
             <article class="session">
               <div class="session-time"><span class="mono">18:00</span><span class="mono session-time-sep">–</span><span class="mono">18:30</span></div>
               <div class="session-body">
                 <p class="session-kind">Experiencias</p>
-                <h3 class="session-title">Experiencias de UPAEP</h3>
-                <p class="session-desc">Presentación de experiencias universitarias relacionadas con el emprendimiento, la innovación y el desarrollo de iniciativas académicas.</p>
+                <h3 class="session-title">Experiencias en emprendimiento de la Universidad Popular Autónoma del Estado de Puebla (UPAEP)</h3>
                 <p class="session-meta mono">Universidad Popular Autónoma del Estado de Puebla · México</p>
               </div>
             </article>
@@ -590,7 +595,6 @@
               <div class="session-body">
                 <p class="session-kind session-kind--talk">Conferencia</p>
                 <h3 class="session-title">El arte de emprender en la era digital</h3>
-                <p class="session-desc">Una conferencia sobre el emprendimiento en la era digital y las perspectivas que surgen de la transformación de los modelos empresariales.</p>
                 <p class="session-meta mono">Dr. José Vargas · IUCE · Argentina</p>
               </div>
             </article>
@@ -615,8 +619,8 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" data-reveal>
             <article class="speaker" style="--accent: var(--turquoise); --fg: var(--ink)">
-              <div class="speaker-portrait">
-                <img class="speaker-photo" src="assets/conferencistas/gregorio-mercado.jpg" alt="MSc. Gregorio Mercado" width="630" height="630" loading="lazy">
+              <div class="speaker-portrait speaker-portrait--photo">
+                <img class="speaker-photo" src="assets/conferencistas/gregorio-mercado.jpg" alt="" width="630" height="630" loading="lazy">
                 <span class="speaker-country"><img class="flag flag--sm" src="assets/flags/colombia.png" alt="" width="16" height="11">Colombia</span>
               </div>
               <div class="speaker-body">
@@ -636,7 +640,7 @@
 
           <div class="col-md-6 col-lg-4" data-reveal style="--d:60ms">
             <article class="speaker" style="--accent: var(--marigold); --fg: var(--ink)">
-              <div class="speaker-portrait">
+              <div class="speaker-portrait speaker-portrait--initials">
                 <span class="speaker-initials">RC</span>
                 <span class="speaker-country"><img class="flag flag--sm" src="assets/flags/brasil.png" alt="" width="16" height="11">Brasil</span>
               </div>
@@ -646,7 +650,7 @@
                 <p class="speaker-bio">Docente e investigador internacional especializado en gestión de la innovación, desarrollo regional y vinculación empresarial en América Latina.</p>
                 <div class="speaker-talk-wrap">
                   <span class="speaker-talk-label">Conferencia internacional</span>
-                  <p class="speaker-talk">Conferencia desde Brasil <span class="tag-pending">Título por confirmar</span></p>
+                  <p class="speaker-talk">Emprendimiento sostenible</p>
                 </div>
                 <div class="speaker-foot">
                   <a class="speaker-slot mono" href="#agenda" data-agenda-day="dia-19">Jue 19 · 18:00 <span aria-hidden="true">→</span></a>
@@ -657,17 +661,17 @@
 
           <div class="col-md-6 col-lg-4" data-reveal style="--d:120ms">
             <article class="speaker" style="--accent: var(--coral); --fg: var(--ink)">
-              <div class="speaker-portrait">
-                <img class="speaker-photo" src="assets/conferencistas/luis-betancourt.jpeg" alt="Luis Armando Betancourt Somoza" width="1086" height="1448" loading="lazy">
+              <div class="speaker-portrait speaker-portrait--photo">
+                <img class="speaker-photo" src="assets/conferencistas/luis-betancourt.jpeg" alt="" width="1086" height="1448" loading="lazy">
                 <span class="speaker-country"><img class="flag flag--sm" src="assets/flags/colombia.png" alt="" width="16" height="11">Colombia</span>
               </div>
               <div class="speaker-body">
                 <h3 class="speaker-name">Luis Betancourt Somoza</h3>
-                <p class="speaker-org">CEO de Estratega S.A.S. · Consultor Estratégico</p>
+                <p class="speaker-org">CEO de Estratega S.A.S. · Agencia de marketing estratégico</p>
                 <p class="speaker-bio">Especialista en Marketing con más de 10 años de experiencia en dirección comercial, publicidad digital, inteligencia artificial y automatización de procesos.</p>
                 <div class="speaker-talk-wrap">
-                  <span class="speaker-talk-label">Intervención especial</span>
-                  <p class="speaker-talk">Estrategia, marketing y crecimiento empresarial <span class="tag-pending">Tema por confirmar</span></p>
+                  <span class="speaker-talk-label">Conferencia empresarial</span>
+                  <p class="speaker-talk">Emprende con estrategia</p>
                 </div>
                 <div class="speaker-foot">
                   <a class="speaker-slot mono" href="#agenda" data-agenda-day="dia-19">Jue 19 · 19:00 <span aria-hidden="true">→</span></a>
@@ -678,13 +682,13 @@
 
           <div class="col-md-6 col-lg-4" data-reveal>
             <article class="speaker" style="--accent: var(--ink); --fg: var(--paper)">
-              <div class="speaker-portrait">
-                <img class="speaker-photo" src="assets/conferencistas/ricardo-pena.jpeg" alt="Dr. Ricardo Peña Ruiz" width="1024" height="1024" loading="lazy">
+              <div class="speaker-portrait speaker-portrait--photo" style="--photo-position: 53% top">
+                <img class="speaker-photo" src="assets/conferencistas/ricardo-pena.webp" alt="" width="1024" height="1024" loading="lazy">
                 <span class="speaker-country"><img class="flag flag--sm flag--light" src="assets/flags/colombia.png" alt="" width="16" height="11">Colombia</span>
               </div>
               <div class="speaker-body">
                 <h3 class="speaker-name">Dr. Ricardo Peña Ruiz</h3>
-                <p class="speaker-org">National Ambassador GEN Colombia · Cintel · Mentor iNNpulsa</p>
+                <p class="speaker-org">Red Nacional de Emprendimiento</p>
                 <p class="speaker-bio">Doctor en Innovación e Ingeniero Industrial. Especialista en formulación de proyectos CTeI, adopción de tecnologías 4.0 en sistemas territoriales y docente investigador.</p>
                 <div class="speaker-talk-wrap">
                   <span class="speaker-talk-label">Conferencia</span>
@@ -699,9 +703,9 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-reveal style="--d:60ms">
-            <article class="speaker speaker--outline" style="--accent: var(--paper-2); --fg: var(--ink)">
-              <div class="speaker-portrait">
-                <img class="speaker-photo" src="assets/conferencistas/jose-vargas.jpeg" alt="Dr. José Vargas" width="960" height="1280" loading="lazy">
+            <article class="speaker speaker--outline" style="--accent: var(--deep); --fg: var(--paper)">
+              <div class="speaker-portrait speaker-portrait--photo" style="--photo-position: 54% top">
+                <img class="speaker-photo" src="assets/conferencistas/jose-vargas.jpeg" alt="" width="960" height="1280" loading="lazy">
                 <span class="speaker-country"><img class="flag flag--sm" src="assets/flags/argentina.png" alt="" width="16" height="11">Argentina</span>
               </div>
               <div class="speaker-body">
@@ -814,7 +818,7 @@
               <p class="place-desc">Las actividades tendrán acceso remoto mediante Microsoft Teams. El enlace de conexión será publicado por la organización.</p>
               <ul class="place-facts">
                 <li><span class="mono">Fechas</span>18, 19 y 20 de noviembre de 2026</li>
-                <li><span class="mono">Horario</span>18:00–20:30 · zona horaria por confirmar</li>
+                <li><span class="mono">Horario</span>18:00–20:30 · hora de Colombia (COT, UTC−5)</li>
               </ul>
               <div class="place-actions">
                 <button class="btn-poster btn-poster--muted" type="button" disabled aria-describedby="teamsPendiente">Acceder por Teams</button>

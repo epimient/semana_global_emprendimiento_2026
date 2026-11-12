@@ -126,9 +126,9 @@
 
   /* ---------- Calendario (.ics) ---------- */
   const calendarDays = [
-    { day: 18, endDay: 19, label: "Día 1 — Apertura e intercambio de experiencias" },
-    { day: 19, endDay: 20, label: "Día 2 — Innovación y transformación empresarial" },
-    { day: 20, endDay: 21, label: "Día 3 — Emprendimiento en la era digital" },
+    { day: 18, endDay: 19, label: "Día 1 — Instalación, experiencias y sostenibilidad" },
+    { day: 19, endDay: 20, label: "Día 2 — Emprendimiento sostenible, estrategia y tecnología 4.0" },
+    { day: 20, endDay: 21, label: "Día 3 — Experiencias universitarias y era digital" },
   ];
 
   function buildCalendar() {

@@ -22,14 +22,15 @@ y Colombia.
 | **Eje temático** | Innovación y Modelos de Negocios Digitales |
 | **Organiza** | CIE — Corporación Universitaria Americana |
 | **Instituciones** | UPAEP, UTXJ, UABC (México) · UniEnsino (Brasil) · IUCE (Argentina) · Americana (Colombia) |
-| **Conferencistas** | 5 voces: Colombia, Brasil y Argentina + una participación especial |
+| **Conferencistas** | 5 voces de Colombia, Brasil y Argentina; Luis Betancourt presenta una conferencia empresarial |
 
 ---
 
 ## Estado
 
-Sitio estático completo, probado en 390 / 768 / 1024 / 1440 px. Sin build, sin
-dependencias instaladas, sin backend.
+Sitio estático completo, sin build, sin dependencias instaladas y sin backend. La
+base responsive se probó en 390 / 768 / 1024 / 1440 px; la versión D2 de
+conferencistas se revisó visualmente en 390 y 1440 px.
 
 **Antes de publicar hay pendientes que dependen de la organización** — ver
 [Pendientes](#pendientes-antes-de-publicar).
@@ -64,11 +65,13 @@ Landing_page_emprendimiento/
 │   ├── logo-semana-global-claro.svg       Logo del evento invertido (fondos oscuros)
 │   ├── logo_sewmana-global.svg            Archivo original subido (sin usar)
 │   ├── flags/                             Banderas normalizadas 64 × 43 (CO, MX, BR, AR)
+│   ├── conferencistas/                    Cuatro fotos usadas, originales y perfiles
 │   └── favicon.svg                        Favicon marigold
 └── docs/
     ├── design.md                    Sistema de diseño y reglas de marca
-    ├── contenido.md                 Texto fuente aprobado del evento
-    └── pendientes.md                Qué falta para publicar: links, formulario, datos
+    ├── contenido.md                 Texto fuente y datos pendientes de confirmación
+    ├── pendientes.md                Qué falta para publicar: links, formulario, datos
+    └── previews/                    Vistas D2 de conferencistas en escritorio y móvil
 ```
 
 ---
@@ -109,12 +112,15 @@ las rutas y evita restricciones del navegador.
 | Formulario | Validación en cliente de 7 campos, mensajes accesibles y pantalla de confirmación | `js/main.js` → *Formulario de registro* |
 | Agenda | Tres pestañas de Bootstrap con apariencia de ticket | HTML + CSS |
 | FAQ | `<details>` nativo, sin JavaScript | HTML + CSS |
+| Retratos D2 | Cuatro fotos bajo el pliegue, con filtro SVG en tinta y papel; Renato usa iniciales | `index.html` + CSS |
 
 ---
 
 ## Cómo editar el contenido
 
-El texto aprobado vive en [`docs/contenido.md`](docs/contenido.md). Para reflejar un
+El texto fuente vive en [`docs/contenido.md`](docs/contenido.md); los nombres
+de representantes universitarios y algunos datos logísticos siguen por
+confirmar. Para reflejar un
 cambio en la página:
 
 | Qué cambiar | Dónde buscarlo en `index.html` |
@@ -143,9 +149,32 @@ cambio en la página:
 5. **Banderas:** el país aparece en tres bloques (chips, instituciones, conferencistas);
    el PNG vive en `assets/flags/` y se reutiliza en los tres. Si se suma un país, hay que
    agregar su bandera a 64 × 43 con el mismo recorte.
+6. **Conferencistas:** foto, nombre, perfil, título, fecha y hora deben corresponder
+   entre la tarjeta y la agenda. Renato usa iniciales hasta disponer de su foto.
 
 Para cambiar los colores o la tipografía, editar los tokens en `:root` al inicio de
 `css/styles.css`; el resto del archivo los hereda.
+
+### Retratos de conferencistas
+
+Las tarjetas de Gregorio Mercado, Luis Betancourt, Ricardo Peña y José Vargas
+usan los archivos de `assets/conferencistas/`. El filtro SVG
+`#speaker-duotone` de `index.html` convierte su apariencia a tinta `#141433`
+y papel `#f6f1e6` en el navegador; **no modifica los originales**. Cada
+tarjeta conserva una barra superior de 6 px y un chip de país con su acento.
+Los retratos se recortan a 4:5 con `object-fit: cover`; si cambia una foto,
+ajustar `--photo-position` en su `.speaker-portrait`. Mantener `loading="lazy"`,
+dimensiones reales y `alt=""`, ya que el nombre aparece como encabezado de la
+misma tarjeta.
+
+Ricardo se sirve como `ricardo-pena.webp` (134 KB frente a 446 KB del JPEG
+original). Las versiones con nombre en mayúsculas y los JPEG de origen se
+conservan como material recibido, pero no se cargan todos en la página.
+Renato mantiene iniciales hasta disponer de una foto utilizable.
+
+Vistas de esta sección: [escritorio](docs/previews/conferencistas-d2-escritorio.png)
+y [móvil](docs/previews/conferencistas-d2-movil.png). Son capturas aisladas de la
+sección, con fuentes de respaldo por no cargar Google Fonts en la vista local.
 
 ---
 
@@ -175,6 +204,9 @@ saldrán sin foto. Se recomienda generarla con el logo del evento sobre fondo ti
   error.
 - `prefers-reduced-motion` desactiva ticker, transiciones y revelados.
 - `<noscript>` deja visible todo lo que depende de JavaScript.
+- Las fotos de conferencistas tienen `alt=""`: el nombre está en el encabezado
+  inmediatamente posterior de cada tarjeta. Las banderas también son decorativas
+  porque el país aparece en texto.
 
 Verificación rápida: recorrer con `Tab` desde el inicio y activar el modo de movimiento
 reducido del sistema operativo.
@@ -211,13 +243,17 @@ responsables— está en [`docs/pendientes.md`](docs/pendientes.md).
       pendiente de aprobación institucional; reemplazarlo por el aprobado.
 - [ ] **Enlace de Microsoft Teams.** Aparece como "pendiente de publicación" en la
       sección de modalidad y en el FAQ.
-- [ ] **Confirmación de horarios.** Verificar 18:00–20:30 COT y actualizar agenda,
-      hero y `.ics` si cambian.
+- [ ] **Confirmación de zona horaria.** La agenda recibida fija los bloques de
+      18:00–20:30, pero no declara zona horaria. La página y el `.ics` usan COT;
+      confirmar ese dato con la organización.
 - [ ] **`og:image`** de 1200 × 630 px.
 - [ ] **URL canónica y `og:url`** definitivas.
 - [ ] **Revisión de nombres y cargos** de conferencistas contra la lista oficial.
-- [ ] **Reemplazar los retratos tipográficos por fotos**, si la organización las entrega
-      (hoy son iniciales por diseño, no por falta de espacio).
+- [ ] **Confirmar permiso de difusión de las cuatro fotos** con la organización
+      antes de publicar esta versión.
+- [ ] **Foto de Renato da Costa**, si la organización la entrega. Los otros cuatro
+      conferencistas ya tienen retrato D2 en sus tarjetas; la falta de esta foto no
+      impide evaluar la prueba visual.
 
 ---
 
@@ -226,8 +262,9 @@ responsables— está en [`docs/pendientes.md`](docs/pendientes.md).
 | Documento | Contenido |
 | --- | --- |
 | [`docs/design.md`](docs/design.md) | Concepto, tokens, tipografía, componentes, estados, accesibilidad, uso de logos |
-| [`docs/contenido.md`](docs/contenido.md) | Texto fuente aprobado, sección por sección |
-| [`docs/pendientes.md`](docs/pendientes.md) | Qué falta para publicar: formulario, Teams, datos, metadatos, enlaces y responsables |
+| [`docs/contenido.md`](docs/contenido.md) | Texto fuente, perfiles y marcas de contenido por confirmar |
+| [`docs/pendientes.md`](docs/pendientes.md) | Qué falta para publicar: formulario, Teams, datos, fotos, metadatos y enlaces |
+| [`docs/previews/`](docs/previews/) | Capturas de la prueba D2 en escritorio y móvil |
 
 ---
 
