@@ -72,7 +72,7 @@
   /* ---------- Cuenta regresiva ---------- */
   const countdownValue = document.getElementById("countdownValue");
   const countdownStart = Date.parse("2026-11-18T18:00:00-05:00");
-  const countdownEnd = Date.parse("2026-11-20T20:30:00-05:00");
+  const countdownEnd = Date.parse("2026-11-20T21:00:00-05:00");
 
   function renderCountdown() {
     if (!countdownValue) return;
@@ -126,9 +126,9 @@
 
   /* ---------- Calendario (.ics) ---------- */
   const calendarDays = [
-    { day: 18, endDay: 19, label: "Día 1 — Instalación, experiencias y sostenibilidad" },
-    { day: 19, endDay: 20, label: "Día 2 — Emprendimiento sostenible, estrategia y tecnología 4.0" },
-    { day: 20, endDay: 21, label: "Día 3 — Experiencias universitarias y era digital" },
+    { day: 18, endUtc: "20261119T020000Z", label: "Día 1 — Instalación, experiencias y sostenibilidad" },
+    { day: 19, endUtc: "20261120T020000Z", label: "Día 2 — Emprendimiento sostenible, experiencias y tecnología 4.0" },
+    { day: 20, endUtc: "20261121T020000Z", label: "Día 3 — Experiencias universitarias, estrategia y era digital" },
   ];
 
   function buildCalendar() {
@@ -152,7 +152,7 @@
         "UID:sge-2026-" + item.day + "@americana.edu.co",
         "DTSTAMP:" + stamp,
         "DTSTART:202611" + item.day + "T230000Z",
-        "DTEND:202611" + item.endDay + "T013000Z",
+        "DTEND:" + item.endUtc,
         "SUMMARY:Semana Global de Emprendimiento 2026 — " + item.label,
         "DESCRIPTION:Innovación y Modelos de Negocios Digitales. Modalidad híbrida. Hora de Colombia (COT).",
         "LOCATION:Auditorio Cosmos — Calle 72 # 41C-64, Barranquilla, Colombia",
@@ -180,94 +180,4 @@
     if (button) button.addEventListener("click", buildCalendar);
   });
 
-  /* ---------- Formulario de registro ---------- */
-  const form = document.getElementById("regForm");
-  const intro = document.getElementById("formIntro");
-  const success = document.getElementById("formSuccess");
-
-  if (form && success) {
-    const rules = [
-      { id: "nombre", error: "errorNombre", test: (v) => v.trim().length >= 3 },
-      {
-        id: "correo",
-        error: "errorCorreo",
-        test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
-      },
-      { id: "institucion", error: "errorInstitucion", test: (v) => v.trim().length >= 2 },
-      { id: "pais", error: "errorPais", test: (v) => v !== "" },
-      { id: "perfil", error: "errorPerfil", test: (v) => v !== "" },
-    ];
-
-    function setFieldState(field, errorId, valid) {
-      const error = document.getElementById(errorId);
-      field.classList.toggle("is-invalid", !valid);
-      field.setAttribute("aria-invalid", String(!valid));
-      if (error) {
-        error.hidden = valid;
-        if (!valid) field.setAttribute("aria-describedby", errorId);
-        else field.removeAttribute("aria-describedby");
-      }
-    }
-
-    function validateField(rule) {
-      const field = document.getElementById(rule.id);
-      if (!field) return true;
-      const valid = rule.test(field.value);
-      setFieldState(field, rule.error, valid);
-      return valid;
-    }
-
-    rules.forEach((rule) => {
-      const field = document.getElementById(rule.id);
-      if (!field) return;
-      field.addEventListener("blur", () => validateField(rule));
-      field.addEventListener("input", () => {
-        if (field.classList.contains("is-invalid")) validateField(rule);
-      });
-      field.addEventListener("change", () => validateField(rule));
-    });
-
-    const modalityInputs = Array.from(
-      form.querySelectorAll('input[name="modalidad"]')
-    );
-    const modalityError = document.getElementById("errorModalidad");
-    const consent = document.getElementById("datos");
-    const consentError = document.getElementById("errorDatos");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      let firstInvalid = null;
-      rules.forEach((rule) => {
-        if (!validateField(rule)) {
-          if (!firstInvalid) firstInvalid = document.getElementById(rule.id);
-        }
-      });
-
-      const modalityChosen = modalityInputs.some((input) => input.checked);
-      modalityInputs.forEach((input) =>
-        input.setAttribute("aria-invalid", String(!modalityChosen))
-      );
-      if (modalityError) modalityError.hidden = modalityChosen;
-      if (!modalityChosen && !firstInvalid) {
-        firstInvalid = modalityInputs[0];
-      }
-
-      const consentOk = !!(consent && consent.checked);
-      if (consent) consent.setAttribute("aria-invalid", String(!consentOk));
-      if (consentError) consentError.hidden = consentOk;
-      if (!consentOk && !firstInvalid) firstInvalid = consent;
-
-      if (firstInvalid) {
-        firstInvalid.focus({ preventScroll: false });
-        return;
-      }
-
-      form.hidden = true;
-      if (intro) intro.hidden = true;
-      success.hidden = false;
-      success.focus({ preventScroll: true });
-      success.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-  }
 })();

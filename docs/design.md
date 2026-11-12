@@ -67,7 +67,6 @@ Definidos en `:root` al inicio de `css/styles.css`.
 | `--coral` | `#f4543c` | Sección de invitación, foco en claro, hover de enlaces |
 | `--turquoise` | `#14a08f` | Tercer acento: marcas de "qué encontrarás" |
 | `--deep` | `#0c3b3a` | Fondo de la agenda y del bloque de experiencias |
-| `--error` | `#a32215` | Texto de error de formulario (sobre papel) |
 
 **Derivados** (no son colores nuevos, son opacidades de los anteriores):
 
@@ -120,7 +119,7 @@ Definidos en `:root` al inicio de `css/styles.css`.
   | --- | --- |
   | Tarjetas en hover (`.find-card`, `.speaker`, `.inst-card`) | `8px 8px 0 var(--accent)`, con `translate(-4px, -4px)` |
   | Panel de propósito (`.purpose`) | `10px 10px 0 var(--marigold)` |
-  | Tarjeta del formulario (`.form-card`) | `12px 12px 0 var(--ink)` |
+  | Tarjeta de inscripción (`.qr-card`) | `12px 12px 0 var(--ink)` |
 
   En reposo las tarjetas están planas: la sombra aparece al pasar el cursor y funciona
   como confirmación de interacción. Los elementos flotantes (menú móvil) usan sombra
@@ -135,7 +134,7 @@ Definidos en `:root` al inicio de `css/styles.css`.
 | Familia | Rol | Dónde |
 | --- | --- | --- |
 | **Big Shoulders Display** (500–900) | Titulares, cifras gigantes, preguntas del FAQ, nombres de conferencistas | `.hero-title`, `.sec-title`, `.day-ticket-num`, `.agenda-tab-num`, `.faq-q`, `.speaker-name`, `.foot-year` |
-| **Instrument Sans** (400–700) | Párrafos, descripciones, botones, formularios | `body`, `.btn-poster`, `.form-control`, `.session-desc` |
+| **Instrument Sans** (400–700) | Párrafos, descripciones y botones | `body`, `.btn-poster`, `.qr-desc`, `.session-desc` |
 | **IBM Plex Mono** (400–600) | Etiquetas, fechas, horas, países, avisos | `.eyebrow`, `.mono`, `.session-time`, `.hero-meta`, `.inst-country` |
 
 ### 4.2 Escala
@@ -144,7 +143,7 @@ Las tres escalas principales usan `clamp()` y crecen con el viewport:
 
 | Elemento | Tamaño | Notas |
 | --- | --- | --- |
-| `.hero-title` | `clamp(3rem, 7.4vw, 6.4rem)` | `line-height: 0.85`, mayúsculas, tracking `-0.015em` |
+| `.hero-title` | `clamp(3rem, 7vw, 5.2rem)` | `line-height: 0.85`, mayúsculas, tracking `-0.015em` |
 | `.hero-title-sub` | `0.47em` del título (`0.5em` en móvil) | En marigold, misma familia |
 | `.sec-title` | `clamp(2.1rem, 4.4vw, 3.85rem)` | `line-height: 0.9`, `max-width: 22ch` |
 | `.sec-title--xl` | `clamp(2.4rem, 5.3vw, 4.7rem)` | `max-width: 16ch` |
@@ -225,7 +224,7 @@ sus hijos hereden el contraste correcto sin repetir colores:
 | 8 | Conferencistas | `#conferencistas` | Papel |
 | 9 | A quién está dirigido | `#para-quien` | Tinta |
 | 10 | Modalidad y lugar | `#lugar` | Papel |
-| 11 | Invitación + formulario | `#participar` | Coral |
+| 11 | Invitación + inscripción por QR | `#participar` | Coral |
 | 12 | Preguntas frecuentes | `#faq` | Papel |
 | 13 | Pie de página | — | Tinta |
 
@@ -253,7 +252,7 @@ padding reducido (de `0.95rem` a `0.55rem`).
   `opacity: 0.32`. Es la única textura de la página.
 - `.hero-year`: "2026" gigante en outline (`-webkit-text-stroke`), decorativo,
   `aria-hidden`.
-- `.hero-kicker`: etiqueta mono con marca cuadrada marigold + separador + edición.
+- `.hero-logo`: logo claro del evento a ancho grande sobre el titular.
 - `.hero-title`: titular en dos niveles (blanco + subtítulo marigold).
 - `.hero-meta`: fecha, ciudad y modalidad separadas por filetes verticales.
 - `.hero-stats`: cuatro cifras (jornadas, instituciones, países, modalidad) con
@@ -335,10 +334,9 @@ La pestaña activa invierte colores (fondo marigold, texto tinta). Los enlaces
 
 Cada jornada lista sesiones `.session` con `.session-time` (mono), `.session-kind`,
 `.session-title` y `.session-meta`. `.session-kind--talk` distingue conferencias.
-La agenda recibida contiene nueve bloques: cuatro el miércoles, tres el jueves
-y dos el viernes. Los horarios vacíos no generan tarjetas. Los temas de Renato
-da Costa y Luis Betancourt ya están confirmados y aparecen también en sus
-tarjetas de conferencista.
+La agenda contiene nueve bloques: tres por día, de 18:00 a 21:00. Los temas
+de Renato da Costa y Luis Betancourt aparecen también en sus tarjetas de
+conferencista; Luis está programado el viernes de 19:00 a 20:00.
 
 ### 6.11 Conferencistas — `.speaker`
 
@@ -352,12 +350,11 @@ intactos. No se necesita una imagen procesada adicional por foto.
 `.speaker-portrait` usa proporción 4:5 en todos los tamaños. Las fotos llenan
 el recorte con `object-fit: cover`; `--photo-position` ajusta la posición de
 Ricardo y José. La barra superior de 6 px y el chip del país toman el
-`--accent` de cada tarjeta: turquesa, coral, tinta y verde profundo. Ricardo
-usa WebP para reducir la descarga. Las cuatro imágenes llevan `loading="lazy"`
+`--accent` de cada tarjeta: turquesa, amarillo, coral, tinta y verde profundo. Ricardo
+usa WebP para reducir la descarga. Las cinco imágenes llevan `loading="lazy"`
 y dimensiones intrínsecas.
 
-Renato da Costa conserva una tarjeta tipográfica amarilla, con iniciales grandes
-y la misma proporción 4:5, hasta recibir su foto. `.speaker-country` muestra el
+Renato da Costa usa una foto con la misma proporción 4:5. `.speaker-country` muestra el
 país junto a la bandera y `.speaker--outline` mantiene la variante de fondo
 claro de José. Las fotos tienen `alt=""` porque el nombre aparece como
 encabezado de la misma tarjeta. No hay fotos de conferencistas en el hero ni
@@ -383,21 +380,14 @@ Dos tarjetas: presencial y virtual.
 
 `.place-card--virtual` invierte el esquema de color.
 
-### 6.14 Invitación + formulario — `.sec--coral`
+### 6.14 Invitación + inscripción por QR — `.sec--coral`
 
 - `.cta-lead` → párrafo de entrada sobre coral (Instrument Sans, tinta al 90 %)
 - `.cta-facts` → tres datos en mono
 - `.cta-actions` → CTA principal + botón de calendario
-- `.form-card` → tarjeta papel con sombra dura, título `.form-title`,
-  descripción `.form-desc` y `.reg-form`
-
-Campos: `nombre`, `correo`, `institucion`, `pais`, `perfil`, radios de `modalidad`
-(`.modality-options`) y checkbox de consentimiento. Los errores usan `.field-error`
-con `hidden` hasta que falla la validación; el estado visual es `.is-invalid` y el
-accesible `aria-invalid` + `aria-describedby`.
-
-Al enviar con éxito se oculta el formulario y aparece `.form-success` (con
-`.form-success-mark`), que recibe el foco.
+- `.qr-card` → tarjeta papel con sombra dura, título `.qr-title`, instrucciones,
+  QR en marco blanco y botón que abre el mismo Google Forms. El QR se muestra a
+  un máximo de 19 rem para conservar su lectura en móvil y escritorio.
 
 ### 6.15 FAQ — `.faq-list` / `.faq-item`
 
@@ -426,8 +416,6 @@ Fondo tinta. `.foot-top` en grid de 4 columnas desde `992px`.
 | `:hover` en botones | Invierte fondo y texto; la flecha avanza 4 px |
 | `:hover` en tarjetas | Se elevan 4 px y aparece la sombra dura de 8 px en su acento |
 | `:focus-visible` | Outline de 3 px, `outline-offset: 3px`, color según `--focus` de la sección |
-| Campo inválido | Borde `--error`, mensaje `.field-error` visible, `aria-invalid="true"` |
-| Éxito de formulario | `.form-success` visible, foco programático, scroll suave al centro |
 | Cabecera desplazada | `.is-stuck` (fondo sólido, menos padding) |
 | Enlace de nav activo | `.is-active` con subrayado marigold |
 | Pestaña de agenda activa | Fondo marigold, texto tinta |
@@ -465,8 +453,8 @@ JavaScript está desactivado.
 - **Semántica:** un solo `<h1>`, jerarquía de `h2`/`h3` sin saltos, `landmarks`
   (`header`, `main`, `footer`, `nav` con `aria-label`), `aria-hidden` en todo lo
   decorativo (marca de agua, textura, flechas).
-- **Formulario:** `label` asociado a cada campo, `required`, `novalidate` para controlar
-  el mensaje, errores vinculados con `aria-describedby` y foco al primer campo inválido.
+- **Inscripción:** el QR tiene texto alternativo y el enlace directo permite abrir
+  el mismo destino sin escanear la imagen.
 - **Imágenes:** todas con `alt`; los retratos de las tarjetas y las banderas usan
   `alt=""` porque su nombre o país está escrito en el mismo bloque. Los logos y
   las fotos llevan dimensiones explícitas; el marco 4:5 reserva el espacio visual.
@@ -483,7 +471,7 @@ El sitio usa un logo institucional y dos variantes del logo del evento.
 | --- | --- | --- |
 | `assets/americana-logo-header-blanco.svg` | Oscuro | Pie de página (152 px) |
 | `assets/logo-semana-global.svg` | Claro | Uso externo / futuras secciones claras |
-| `assets/logo-semana-global-claro.svg` | Oscuro | Cabecera (50 px desktop / 40 px móvil) y pie (300 px) |
+| `assets/logo-semana-global-claro.svg` | Oscuro | Cabecera (50 px desktop / 40 px móvil), hero (hasta 620 px) y pie (300 px) |
 | `assets/favicon.svg` | — | Pestaña del navegador |
 
 `logo-semana-global-claro.svg` es una **versión invertida** generada a partir del
@@ -535,17 +523,15 @@ la organización quedan intactos en `assets/`.
 | Tarjeta | Archivo servido | Origen | Estado |
 | --- | --- | --- | --- |
 | Gregorio Mercado | `gregorio-mercado.jpg` (63,5 KB; 630 × 630) | Foto recibida, fondo blanco | D2 |
-| Renato da Costa | — | Foto pendiente | Iniciales `RC` |
+| Renato da Costa | `renato-da-costa.png` (1086 × 1448) | Foto recibida | D2 |
 | Luis Betancourt | `luis-betancourt.jpeg` (74,2 KB; 1086 × 1448) | Foto recibida, fondo blanco | D2 |
 | Ricardo Peña | `ricardo-pena.webp` (133,9 KB; 1024 × 1024) | JPEG recibido de 445,8 KB | D2 |
 | José Vargas | `jose-vargas.jpeg` (120,9 KB; 960 × 1280) | Foto recibida, fondo de oficina | D2 |
 
-Los archivos están en `assets/conferencistas/`. Las cuatro fotos servidas suman
-aproximadamente 392 KB; el filtro no añade archivos descargables. Conservar los
-originales para poder rehacer los encuadres. Si llega la foto de Renato, agregarla
-con `.speaker-portrait--photo`, `loading="lazy"`, dimensiones reales y
-`alt=""`; verificar el recorte en móvil y escritorio. La prueba actual está
-documentada en las [capturas](./previews/).
+Los archivos están en `assets/conferencistas/`; el filtro no añade archivos
+descargables. Conservar los originales para poder rehacer los encuadres.
+La foto de Renato se incorporó después de las [capturas D2](./previews/), que
+muestran el estado anterior de su tarjeta.
 
 Antes de publicar los retratos, confirmar con la organización el permiso de
 difusión y la versión final de nombres, cargos y temas. Ver

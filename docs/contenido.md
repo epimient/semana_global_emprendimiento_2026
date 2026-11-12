@@ -181,7 +181,7 @@ Institución anfitriona del encuentro, a través de su Centro de Innovación y E
 
 ### Tres jornadas. Nuevas perspectivas. Un mismo propósito.
 
-Explora la programación académica de la Semana Global de Emprendimiento 2026 y conoce las experiencias y conferencias previstas para cada jornada.
+Explora la programación académica oficial de la Semana Global de Emprendimiento 2026 y conoce las experiencias y conferencias de cada jornada.
 
 ### MIÉRCOLES 18 DE NOVIEMBRE
 
@@ -191,27 +191,23 @@ Explora la programación académica de la Semana Global de Emprendimiento 2026 y
 
 Instalación del evento.
 
-**18:30 – 19:00 | Experiencias en emprendimiento de la Universidad Tecnológica de Xicotepec de Juárez**
+**18:30 – 20:00 | Experiencias en emprendimiento de la Universidad Tecnológica de Xicotepec**
 
 País: México.
 
-**19:00 – 19:30 | Experiencias en emprendimiento de la Universidad Autónoma de Baja California**
-
-País: México.
-
-**20:00 – 20:30 | Conferencia: Sostenibilidad empresarial y negocios verdes**
+**20:00 – 21:00 | Conferencia Colombia: Sostenibilidad empresarial y negocios verdes**
 
 Conferencista: MSc. Gregorio Mercado.
 
-Institución: Centro de Innovación y Emprendimiento, Corporación Universitaria Americana.
+Institución indicada en la agenda: CIE, Universidad Americana.
 
 País: Colombia.
 
 ### JUEVES 19 DE NOVIEMBRE
 
-**Emprendimiento sostenible, estrategia y tecnología 4.0**
+**Emprendimiento sostenible, experiencias y tecnología 4.0**
 
-**18:00 – 18:30 | Conferencia Brasil: Emprendimiento sostenible**
+**18:00 – 19:00 | Conferencia Brasil: Emprendimiento sostenible**
 
 Conferencista: Dr. Renato da Costa.
 
@@ -219,13 +215,13 @@ Institución: UniEnsino.
 
 País: Brasil.
 
-**19:00 – 19:30 | Conferencia empresarial: Emprende con estrategia**
+**19:00 – 20:00 | Experiencias en emprendimiento de la Universidad Autónoma de Baja California**
 
-Participante: Luis Betancourt Somoza.
+Institución: Universidad Autónoma de Baja California (UABC).
 
-Perfil informado: CEO de Estratega S.A.S., agencia de marketing estratégico.
+País: México.
 
-**20:00 – 20:30 | Conferencia: Adopción de tecnologías 4.0 en sistemas territoriales de innovación**
+**20:00 – 21:00 | Conferencia Colombia: Adopción de tecnologías 4.0 en sistemas territoriales de innovación**
 
 Conferencista: Dr. Ricardo Peña.
 
@@ -235,15 +231,21 @@ País: Colombia.
 
 ### VIERNES 20 DE NOVIEMBRE
 
-**Experiencias universitarias y era digital**
+**Experiencias universitarias, estrategia y era digital**
 
-**18:00 – 18:30 | Experiencias en emprendimiento de la Universidad Popular Autónoma del Estado de Puebla (UPAEP)**
+**18:00 – 19:00 | Experiencias en emprendimiento de la Universidad Popular Autónoma del Estado de Puebla (UPAEP)**
 
 Institución: Universidad Popular Autónoma del Estado de Puebla.
 
 País: México.
 
-**20:00 – 20:30 | Conferencia: El arte de emprender en la era digital**
+**19:00 – 20:00 | Conferencia empresarial: Emprende con estrategia**
+
+Conferencista: Luis Betancourt Somoza.
+
+Perfil informado: CEO de Estratega S.A.S., agencia de marketing estratégico.
+
+**20:00 – 21:00 | Conferencia Argentina: El arte de emprender en la era digital**
 
 Conferencista: Dr. José Vargas.
 
@@ -251,11 +253,10 @@ Institución: Instituto Universitario de Ciencias Empresariales (IUCE).
 
 País: Argentina.
 
-**Nota de programación:** La tabla recibida deja sin actividad asignada el bloque
-19:30–20:00 de las tres jornadas, además de 18:30–19:00 y 19:00–19:30 del
-viernes y 18:30–19:00 del jueves. Esos espacios no se presentan como
-actividades confirmadas. La página muestra los horarios como hora de Colombia
-(COT, UTC−5), pendiente de confirmación explícita de la organización.
+**Nota de programación:** Las tres jornadas tienen tres actividades continuas
+de 18:00 a 21:00. La página muestra los horarios como hora de Colombia
+(COT, UTC−5), pendiente de
+confirmación explícita de la organización.
 
 ---
 
@@ -265,9 +266,8 @@ actividades confirmadas. La página muestra los horarios como hora de Colombia
 
 Especialistas y representantes académicos anunciados para esta edición.
 
-**Presentación actual:** cuatro retratos de conferencistas en tinta y papel
-(Mercado, Betancourt, Peña y Vargas). Renato da Costa aparece con iniciales
-hasta disponer de su foto. El tratamiento visual y los archivos se documentan
+**Presentación actual:** cinco retratos de conferencistas en tinta y papel
+(Mercado, Renato, Betancourt, Peña y Vargas). El tratamiento visual y los archivos se documentan
 en [`design.md`](./design.md#611-conferencistas--speaker).
 
 ### MSc. Gregorio Mercado
@@ -393,8 +393,9 @@ Las actividades tendrán acceso remoto mediante Microsoft Teams.
 
 **Fecha:** 18, 19 y 20 de noviembre de 2026.
 
-**Horario mostrado en la página:** 18:00–20:30, hora de Colombia (COT,
-UTC−5). La organización aún debe confirmar que la tabla recibida usa esa zona.
+**Horario mostrado en la página:** 18:00–21:00 los tres días, hora de Colombia
+(COT, UTC−5). La organización aún debe confirmar
+que la tabla recibida usa esa zona.
 
 **Botones sugeridos:**
 
@@ -443,7 +444,7 @@ El encuentro está dirigido a estudiantes, docentes, egresados, emprendedores, r
 
 ### ¿Qué instituciones participarán?
 
-El evento contará con experiencias y conferencias vinculadas con UPAEP, la Universidad Tecnológica de Xicotepec de Juárez, la Universidad Autónoma de Baja California, UniEnsino, IUCE y la Corporación Universitaria Americana.
+Participan UPAEP, la Universidad Tecnológica de Xicotepec de Juárez, la Universidad Autónoma de Baja California, UniEnsino, IUCE y la Corporación Universitaria Americana. La agenda indica las experiencias y conferencias programadas.
 
 ### ¿Dónde puedo consultar los horarios?
 
@@ -515,28 +516,17 @@ UPAEP | UTXJ | UABC | UniEnsino | IUCE
 
 **Cierre:** Quiero participar
 
-## Formulario de registro (opcional, sujeto a aprobación)
+## Inscripción por código QR
 
-**Título:** Participa en la Semana Global de Emprendimiento 2026
+**Título:** Regístrate en el evento
 
-**Descripción:** Completa tus datos para solicitar información sobre tu participación en este encuentro internacional de innovación y emprendimiento.
+**Descripción:** Escanea el código QR para abrir el formulario de inscripción.
 
-**Campos sugeridos:**
+**Alternativa para móvil:** botón «Abrir formulario de inscripción» que dirige al
+mismo Google Forms codificado en `assets/codigo_QR.png`.
 
-- Nombre completo.
-- Correo electrónico.
-- Institución u organización.
-- País.
-- Perfil: estudiante, docente, egresado, emprendedor, empresario u otro.
-- Modalidad de interés: presencial o virtual.
-
-**Botón:** Enviar solicitud
-
-**Texto de confirmación después de un envío exitoso:**
-
-Hemos recibido tu solicitud. Consulta la información oficial del evento y permanece atento a las indicaciones que se compartan sobre la participación.
-
-**Aviso de privacidad:** Incorporar la autorización de tratamiento de datos personales aprobada por la institución antes de habilitar el formulario.
+**Privacidad:** el formulario de Google debe mostrar la autorización y la política
+de tratamiento de datos aprobadas por la institución.
 
 ---
 
