@@ -389,7 +389,7 @@ Barranquilla, Atlántico, Colombia.
 
 Las actividades tendrán acceso remoto mediante Microsoft Teams.
 
-*Enlace de acceso pendiente de publicación por parte de la organización.*
+*Enlace de acceso: https://teams.microsoft.com/meet/227721956255151?p=oUWewZ3VTiMpDNyxkY*
 
 **Fecha:** 18, 19 y 20 de noviembre de 2026.
 

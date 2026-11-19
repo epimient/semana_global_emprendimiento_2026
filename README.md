@@ -111,6 +111,8 @@ las rutas y evita restricciones del navegador.
 | Menú móvil | Offcanvas de Bootstrap; se cierra al elegir un enlace | `js/main.js` → *Menú móvil* |
 | Calendario `.ics` | Genera 3 eventos de 23:00Z a 02:00Z del día siguiente | `js/main.js` → *Calendario* |
 | Inscripción | QR y enlace directo al mismo Google Forms | `index.html` → `#participar` |
+| Aviso en vivo | Panel `.live-now` en el hero con acceso directo a Teams; se oculta solo fuera del 19 nov (Bogotá) | `index.html` + `js/main.js` → *Aviso en vivo* |
+| Acceso a Teams | Un mismo enlace en aviso, modalidad, FAQ, JSON-LD y `.ics` | `index.html` + `js/main.js` |
 | Agenda | Tres pestañas de Bootstrap con apariencia de ticket | HTML + CSS |
 | FAQ | `<details>` nativo, sin JavaScript | HTML + CSS |
 | Retratos D2 | Cinco fotos bajo el pliegue, con filtro SVG en tinta y papel | `index.html` + CSS |
@@ -244,8 +246,6 @@ responsables— está en [`docs/pendientes.md`](docs/pendientes.md).
       organización recibe los datos.
 - [ ] **Revisar el tratamiento de datos en Google Forms.** La autorización y la
       política de privacidad deben estar en el formulario externo.
-- [ ] **Enlace de Microsoft Teams.** Aparece como "pendiente de publicación" en la
-      sección de modalidad y en el FAQ.
 - [ ] **Confirmación de zona horaria.** La agenda recibida fija 18:00–21:00 los
       tres días, pero no declara zona horaria. La página y el `.ics` usan COT;
       confirmar ese dato con la organización.

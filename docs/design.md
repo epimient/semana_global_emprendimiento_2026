@@ -262,6 +262,23 @@ padding reducido (de `0.95rem` a `0.55rem`).
   "Añadir a mi calendario". En hover o foco la fila entera se invierte a marigold,
   como un ticket que se marca.
 
+#### 6.2.1 Aviso en vivo — `.live-now`
+
+Pase de acceso pegado sobre el cartel, como una cinta que se cruza en el hero el
+día del evento. Primero hijo de `.hero-inner`, por encima del tickets del hero.
+
+- Panel papel (`--paper-2`) con borde en tinta y una franja izquierda marigold de
+  6 px: se lee como un boleto adherido, no como un banner flotante ni un modal.
+- `.live-now-dot`: punto coral de 9 px con `@keyframes live-pulse` (1.6 s,
+  `steps(1, end)`) que parpadea; se detiene con `prefers-reduced-motion`.
+- `.live-now-label` y `.live-now-sub` en mono, en mayúsculas, con la fecha y el
+  horario; `.live-now-title` en display, como el resto del cartel.
+- `.live-now-cta`: reutiliza `.btn-poster--full` en versión compacta (fondo tinta,
+  hover coral), con la flecha `↗` de destino externo. En móvil pasa a ancho completo.
+- El bloque se oculta solo (`hidden`) fuera del 19 de noviembre de 2026 en
+  `America/Bogota`; lo controla `js/main.js`. El enlace de Teams es el mismo en el
+  aviso, la tarjeta de modalidad, el FAQ, el JSON-LD y el `.ics`.
+
 ### 6.3 Ticker — `.ticker`
 
 Cinta marigold de ancho completo. `.ticker-track` se duplica en dos `.ticker-group`

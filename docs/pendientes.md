@@ -29,7 +29,7 @@ de 2026**; las fechas límite de la sección 11 están calculadas sobre esa fech
 | # | Pendiente | Estado | Impacto |
 | --- | --- | --- | --- |
 | 1 | Probar Google Forms | 🟠 | QR y enlace directo preparados; falta verificar una inscripción real y el destino de las respuestas |
-| 2 | Falta el enlace de Teams | 🔴 | La modalidad virtual no se puede usar |
+| 2 | Enlace de Microsoft Teams | ✅ | Publicado en hero, modalidad, FAQ, JSON-LD e `.ics` |
 | 3 | Zona horaria sin confirmación oficial | 🟠 | El sitio muestra COT de forma consistente, pero la tabla oficial no indica zona horaria |
 | 4 | Autorización de datos por verificar | 🔴 (legal) | Falta comprobar el texto y la política de privacidad en Google Forms |
 | 5 | `og:image` inexistente | 🟠 | Al compartir por WhatsApp o LinkedIn, la tarjeta sale sin imagen |
@@ -54,25 +54,25 @@ requiere iniciar sesión y si esa restricción es apropiada para el público.
 
 ---
 
-## 3. Enlace de Microsoft Teams 🔴
+## 3. Enlace de Microsoft Teams ✅
 
-**Dónde está hoy el hueco:**
+**Resuelto.** Se publica un único enlace para las tres jornadas:
 
-- Tarjeta de modalidad virtual (`id="lugar"`): botón *"Acceder por Teams"*
-  deshabilitado, con la nota *"Enlace pendiente de publicación"*.
-- FAQ, pregunta *"¿Cómo puedo acceder a la modalidad virtual?"*: dice que estará
-  disponible cuando se confirme.
-- Nota lateral del FAQ: remite a "los canales oficiales" sin decir cuáles.
+`https://teams.microsoft.com/meet/227721956255151?p=oUWewZ3VTiMpDNyxkY`
 
-**Lo que falta decidir:**
+**Dónde está implementado:**
 
-1. ¿Un solo enlace para las tres jornadas o uno por día?
-2. ¿El enlace es abierto o requiere registro previo / sala de espera?
-3. ¿Se publica en la página o se envía sólo a quienes se inscriban?
+- Hero: panel `.live-now` con el CTA *"Ingresar a Teams"*. Se oculta automáticamente
+  fuera del 19 de noviembre de 2026 en `America/Bogota` (controlado en `js/main.js`).
+- Tarjeta de modalidad virtual (`id="lugar"`): botón activo *"Ingresar a Teams"*.
+- FAQ: respuesta de *"¿Cómo puedo acceder a la modalidad virtual?"* con el enlace.
+- JSON-LD: `virtualLocation.url` apunta al enlace de Teams.
+- `.ics`: campo `URL:` con el mismo enlace en los tres eventos, para que llegue al
+  calendario.
 
-**Dónde se actualiza:** `index.html` (tarjeta virtual, dos respuestas del FAQ, nota
-lateral) y el generador del `.ics` en `js/main.js`, añadiendo el campo `URL:` a los
-tres eventos para que el enlace llegue al calendario.
+**Pendiente de confirmar con la organización (no bloquea la publicación):** si el
+enlace requiere sala de espera o registro previo, y si estará activo durante las tres
+jornadas o sólo el día 19. El texto del sitio asume que sirve para las tres.
 
 ---
 
@@ -122,7 +122,7 @@ Verificar estos puntos en el Google Forms antes de recibir datos reales.
 | `og:url` | Misma URL, misma duda |
 | `og:image` | **No existe.** La tarjeta de Twitter está declarada como `summary_large_image` sin imagen: la vista previa saldrá vacía |
 | `og:image:alt` | No existe |
-| JSON-LD `virtualLocation.url` | Apunta a `americana.edu.co` genérico; debería ser el enlace de Teams o la página del evento |
+| JSON-LD `virtualLocation.url` | ✅ Apunta al enlace de Teams |
 | JSON-LD `offers` | Ausente. Si el evento es gratuito, declararlo ayuda a que el buscador lo muestre como "gratis" |
 
 **Se necesita:** la URL definitiva y una decisión sobre la imagen de 1200 × 630.
@@ -214,7 +214,7 @@ mejor no prometerlas.
 | --- | --- | --- | --- |
 | 1 | Probar Google Forms y confirmar dónde llegan las respuestas | | **14 nov** |
 | 2 | Texto y enlace de la política de datos | | **15 nov** |
-| 3 | Enlace de Teams (uno o tres) | | 16 nov |
+| 3 | Enlace de Teams (uno o tres) | ✅ Un solo enlace publicado | resuelto |
 | 4 | Confirmar que los horarios recibidos corresponden a COT | | 14 nov |
 | 5 | ¿Inscripción previa o entrada libre? | | 14 nov |
 | 6 | ¿Costo? ¿Certificado? ¿Grabación? | | 16 nov |
@@ -237,14 +237,13 @@ Si el tiempo no alcanza para todo, este es el orden recomendado:
 
 **Segundo (antes del 16)**
 
-5. Enlace de Teams.
-6. Texto de autorización de datos.
-7. `og:image` y URL canónica.
-8. Respuestas de costo, certificado e inscripción previa.
+5. Texto de autorización de datos.
+6. `og:image` y URL canónica.
+7. Respuestas de costo, certificado e inscripción previa.
 
 **Tercero (si queda aire)**
 
-9. Confirmar nombres de representantes universitarios.
+8. Confirmar nombres de representantes universitarios.
 
 ---
 
@@ -256,6 +255,8 @@ Para que quede claro qué **sí** está terminado y no requiere trabajo:
   1024 y 1440 px. La nueva sección D2 se inspeccionó visualmente en 390 y
   1440 px; las capturas aisladas están en `docs/previews/`.
 - Navegación, pestañas de la agenda, menú móvil, FAQ y contador funcionando.
+- Aviso `.live-now` y acceso a Teams verificados en 390, 768, 1024 y 1440 px, sin
+  errores de consola; el `.ics` incluye el campo `URL:` con el enlace.
 - Descarga de calendario `.ics` con los tres eventos.
 - Contraste de todo el texto informativo por encima de 4.5:1.
 - Navegación por teclado y modo de movimiento reducido.

@@ -13,6 +13,23 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* ---------- Aviso en vivo: solo el 19 de noviembre (hora de Bogotá) ---------- */
+  const liveAhora = document.getElementById("liveAhora");
+  if (liveAhora && "Intl" in window) {
+    const partes = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Bogota",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(new Date());
+    const parte = (tipo) => {
+      const encontrada = partes.find((p) => p.type === tipo);
+      return encontrada ? encontrada.value : "";
+    };
+    const hoy = parte("year") + "-" + parte("month") + "-" + parte("day");
+    if (hoy !== "2026-11-19") liveAhora.hidden = true;
+  }
+
   /* ---------- Revelado al desplazar ---------- */
   const revealItems = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window) {
@@ -125,6 +142,8 @@
   }
 
   /* ---------- Calendario (.ics) ---------- */
+  const teamsUrl =
+    "https://teams.microsoft.com/meet/227721956255151?p=oUWewZ3VTiMpDNyxkY";
   const calendarDays = [
     { day: 18, endUtc: "20261119T020000Z", label: "Día 1 — Instalación, experiencias y sostenibilidad" },
     { day: 19, endUtc: "20261120T020000Z", label: "Día 2 — Emprendimiento sostenible, experiencias y tecnología 4.0" },
@@ -156,7 +175,7 @@
         "SUMMARY:Semana Global de Emprendimiento 2026 — " + item.label,
         "DESCRIPTION:Innovación y Modelos de Negocios Digitales. Modalidad híbrida. Hora de Colombia (COT).",
         "LOCATION:Auditorio Cosmos — Calle 72 # 41C-64, Barranquilla, Colombia",
-        "URL:https://americana.edu.co/",
+        "URL:" + teamsUrl,
         "END:VEVENT"
       );
     });
